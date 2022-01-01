@@ -10,9 +10,9 @@ import os
 class Rossmann( object):
 
     def __init__(self):
-        self.home_path =  os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        self.home_path =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.parameter_path = os.path.join(self.home_path, 'parameter')
-
+        
         self.competition_distance_scaler = pickle.load(open( os.path.join(self.parameter_path, 'competition_distance_scaler.pkl') , 'rb'))
         self.competition_time_month_scaler = pickle.load(open( os.path.join(self.parameter_path, 'competition_time_month_scaler.pkl'), 'rb'))
         self.promo_time_week_scaler = pickle.load(open( os.path.join(self.parameter_path, 'promo_time_week_scaler.pkl'), 'rb'))
